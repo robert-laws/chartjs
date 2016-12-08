@@ -1,0 +1,11 @@
+{
+  "name": "chartjs",
+  "version": "1.0.0",
+  "description": "Data Visualization with ChartJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Robert Laws",
+  "license": "ISC"
+}
