@@ -82,11 +82,11 @@
                         </div>
                     </div>
                     <div class="item">
-                        <i class="dropdown icon"></i> HIST 181
+                        <i class="dropdown icon"></i> HIST 107
                         <div class="menu">
-                            <a class="item" href="hist181Sections.html">Sections</a>
-                            <a class="item" href="hist181Content.html">Content</a>
-                            <a class="item" href="hist181Access.html">Access</a>
+                            <a class="item" href="hist107Sections.html">Sections</a>
+                            <a class="item" href="hist107Content.html">Content</a>
+                            <a class="item" href="hist107Access.html">Access</a>
                         </div>
                     </div>
                     <div class="item">
@@ -118,9 +118,63 @@
         </div>
     </div>
 
-    <div>
+    <canvas id="myChart" width="400" height="200"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+    <script>
+        var ctx = document.getElementById("myChart");
+        var data = {
+            labels: [
+                "Getting Started",
+                "Books",
+                "Electronic Resources",
+                "Reference",
+                "Arabic Romanization",
+                "Search Strategy Examples",
+                "Heritage and Archival Projects"
+            ],
+            datasets: [
+                {
+                    data: [278, 69, 58, 50, 47, 26, 5],
+                    backgroundColor: [
+                        "#FF6384",
+                        "#36A2EB",
+                        "#FFCE56",
+                        "#153DB3",
+                        "#21B315",
+                        "#B36215",
+                        "#A015B3"
+                    ],
+                    hoverBackgroundColor: [
+                        "#FF6384",
+                        "#36A2EB",
+                        "#FFCE56",
+                        "#153DB3",
+                        "#21B315",
+                        "#B36215",
+                        "#A015B3"
+                    ]
+                }
+            ]
+        };
+        var options = {
+            title: {
+                display: true,
+                text: 'ARAB 403 - Pages: views by percentage (533 Views Total)',
+                fontSize: 26
+            },
+            tooltips: {
+                display: true,
+                bodyFontSize: 36
+            }
+        };
 
-    </div>
+        var myPieChart = new Chart(ctx, {
+            type: 'pie',
+            data: data,
+            options: options
+        });
+
+    </script>
 
     <script>
         $('.ui.dropdown').dropdown();

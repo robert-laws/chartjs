@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>ChartJS</title>
+    <title></title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css">
     <style type="text/css">
         body {
@@ -26,6 +26,7 @@
             margin: 5em 0em 0em;
             padding: 5em 0em;
         }
+
         canvas {
             padding: 70px 20px 0;
         }
@@ -38,101 +39,87 @@
 <body>
     <div class="ui fixed inverted menu">
         <div class="ui container">
-            <a href="#" class="header item">
+            <a href="index.html" class="header item">
                 <img class="logo" src="img/logo3.png" alt="logo"> Library Stats
             </a>
-            <a href="#" class="item">Gem of the Week</a>
+            <a href="gem.html" class="item">Gem of the Week</a>
             <div class="ui simple dropdown item">
                 Course Guides <i class="dropdown icon"></i>
                 <div class="menu">
-                    <a class="item" href="#">Over Views Per Guide</a>
-                    <a class="item" href="#">Link Item</a>
+                    <a class="item" href="overview.html">Overview of All Course Guides</a>
                     <div class="divider"></div>
                     <div class="header">Individual Guides</div>
                     <div class="item">
                         <i class="dropdown icon"></i> ARAB 403
                         <div class="menu">
-                            <a class="item" href="#">Pages - Total Views</a>
-                            <a class="item" href="#">Link Item</a>
+                            <a class="item" href="arab403Sections.html">Sections</a>
+                            <a class="item" href="arab403Content.html">Content</a>
+                            <a class="item" href="arab403Access.html">Access</a>
                         </div>
                     </div>
-                    <a class="item" href="#">Link Item</a>
+                    <div class="item">
+                        <i class="dropdown icon"></i> IECO 400
+                        <div class="menu">
+                            <a class="item" href="ieco400Sections.html">Sections</a>
+                            <a class="item" href="ieco400Content.html">Content</a>
+                            <a class="item" href="ieco400Access.html">Access</a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <i class="dropdown icon"></i> HIST 181
+                        <div class="menu">
+                            <a class="item" href="hist181Sections.html">Sections</a>
+                            <a class="item" href="hist181Content.html">Content</a>
+                            <a class="item" href="hist181Access.html">Access</a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <i class="dropdown icon"></i> HIST 008
+                        <div class="menu">
+                            <a class="item" href="hist008Sections.html">Sections</a>
+                            <a class="item" href="hist008Content.html">Content</a>
+                            <a class="item" href="hist008Access.html">Access</a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <i class="dropdown icon"></i> HIST 107
+                        <div class="menu">
+                            <a class="item" href="hist107Sections.html">Sections</a>
+                            <a class="item" href="hist107Content.html">Content</a>
+                            <a class="item" href="hist107Access.html">Access</a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <i class="dropdown icon"></i> INAF 100-73
+                        <div class="menu">
+                            <a class="item" href="inaf100Sections.html">Sections</a>
+                            <a class="item" href="inaf100Content.html">Content</a>
+                            <a class="item" href="inad100Access.html">Access</a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <i class="dropdown icon"></i> IPOL 386
+                        <div class="menu">
+                            <a class="item" href="ipol386Sections.html">Sections</a>
+                            <a class="item" href="ipol386Content.html">Content</a>
+                            <a class="item" href="ipol386Access.html">Access</a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <i class="dropdown icon"></i> HIST 160
+                        <div class="menu">
+                            <a class="item" href="hist160Sections.html">Sections</a>
+                            <a class="item" href="hist160Content.html">Content</a>
+                            <a class="item" href="hist160Access.html">Access</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <div>
-        <canvas id="myChart" width="400" height="200"></canvas>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
-        <script>
-            var ctx = document.getElementById("myChart");
-            var data = {
-                labels: ["ARAB 403", "IECO 400", "HIST 181", "HIST 008", "HIST 107", "INAF 100-73", "IPOL 386", "HIST 160-70"],
-                datasets: [{
-                    label: 'Total Views per Course Guide',
-                    backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(25, 206, 186, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)'
-                ],
-                    borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(25, 206, 186, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)',
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)'
-                ],
-                    borderWidth: 1,
-                    data: [544, 344, 240, 146, 106, 72, 34, 27]
-            }]
-            };
-            var options = {
-                showLines: true,
-                title: {
-                    display: true,
-                    text: 'Course Guides - Fall 2016 - Total Page Views',
-                    fontSize: 26
-                },
-                scales: {
-                    xAxes: [{
-                        scaleLabel: {
-                            labelString: "Course Name",
-                            display: true,
-                            fontSize: 20
-                        },
-                        ticks: {
-                            fontSize: 16
-                        }
-                }],
-                    yAxes: [{
-                        stacked: true,
-                        scaleLabel: {
-                            labelString: "Number of Views",
-                            display: true,
-                            fontSize: 20
-                        },
-                        ticks: {
-                            fontSize: 16
-                        }
-                }]
-                }
-            };
 
-            var myLineChart = new Chart(ctx, {
-                type: 'bar',
-                data: data,
-                options: options
-            });
-        </script>
     </div>
 
     <script>
