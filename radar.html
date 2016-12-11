@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bar Chart</title>
+</head>
+
+<body>
+    <canvas id="myChart" width="400" height="200"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+    <script>
+        var ctx = document.getElementById("myChart");
+        var data = {
+            labels: ["Database", "Link", "Document/File", "Book from the Catalog"],
+            datasets: [
+                {
+                    label: "# Created",
+                    backgroundColor: "rgba(179,181,198,0.2)",
+                    borderColor: "rgba(179,181,198,1)",
+                    pointBackgroundColor: "rgba(179,181,198,1)",
+                    pointBorderColor: "#fff",
+                    pointHoverBackgroundColor: "#fff",
+                    pointHoverBorderColor: "rgba(179,181,198,1)",
+                    data: [8, 46, 1, 8]
+                },
+                {
+                    label: "# Clicked",
+                    backgroundColor: "rgba(255,99,132,0.2)",
+                    borderColor: "rgba(255,99,132,1)",
+                    pointBackgroundColor: "rgba(255,99,132,1)",
+                    pointBorderColor: "#fff",
+                    pointHoverBackgroundColor: "#fff",
+                    pointHoverBorderColor: "rgba(255,99,132,1)",
+                    data: [53, 68, 8, 0]
+                }
+            ]
+        };
+        var options = {
+            title: {
+                display: true,
+                text: 'ARAB 403 - Content: types created & types clicked',
+                fontSize: 26
+            },
+            tooltips: {
+                display: true,
+                titleFontSize: 36,
+                bodyFontSize: 30
+            },
+            scale: {
+                linkArc: false,
+                pointLabels: {
+                    fontSize: 20
+                }
+            }
+        };
+
+        var myRadarChart = new Chart(ctx, {
+            type: 'radar',
+            data: data,
+            options: options
+        });
+    </script>
+</body>
+
+</html>

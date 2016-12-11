@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ChartJS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css">
+    <style type="text/css">
+        body {
+            background-color: #FFFFFF;
+        }
+
+        .ui.menu .item img.logo {
+            margin-right: 1.5em;
+        }
+
+        .main.container {
+            margin-top: 7em;
+        }
+
+        .wireframe {
+            margin-top: 2em;
+        }
+
+        .ui.footer.segment {
+            margin: 5em 0em 0em;
+            padding: 5em 0em;
+        }
+        canvas {
+            padding: 70px 20px 0;
+        }
+    </style>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+</head>
+
+<body>
+    <div class="ui fixed inverted menu">
+        <div class="ui container">
+            <a href="#" class="header item">
+                <img class="logo" src="img/logo3.png" alt="logo"> Library Stats
+            </a>
+            <a href="#" class="item">Gem of the Week</a>
+            <div class="ui simple dropdown item">
+                Course Guides <i class="dropdown icon"></i>
+                <div class="menu">
+                    <a class="item" href="#">Over Views Per Guide</a>
+                    <a class="item" href="#">Link Item</a>
+                    <div class="divider"></div>
+                    <div class="header">Individual Guides</div>
+                    <div class="item">
+                        <i class="dropdown icon"></i> ARAB 403
+                        <div class="menu">
+                            <a class="item" href="#">Pages - Total Views</a>
+                            <a class="item" href="#">Link Item</a>
+                        </div>
+                    </div>
+                    <a class="item" href="#">Link Item</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <canvas id="myChart" width="400" height="200"></canvas>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+        <script>
+            var ctx = document.getElementById("myChart");
+            var data = {
+                labels: ["ARAB 403", "IECO 400", "HIST 181", "HIST 008", "HIST 107", "INAF 100-73", "IPOL 386", "HIST 160-70"],
+                datasets: [{
+                    label: 'Total Views per Course Guide',
+                    backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(25, 206, 186, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)'
+                ],
+                    borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(25, 206, 186, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)'
+                ],
+                    borderWidth: 1,
+                    data: [544, 344, 240, 146, 106, 72, 34, 27]
+            }]
+            };
+            var options = {
+                showLines: true,
+                title: {
+                    display: true,
+                    text: 'Course Guides - Fall 2016 - Total Page Views',
+                    fontSize: 26
+                },
+                scales: {
+                    xAxes: [{
+                        scaleLabel: {
+                            labelString: "Course Name",
+                            display: true,
+                            fontSize: 20
+                        },
+                        ticks: {
+                            fontSize: 16
+                        }
+                }],
+                    yAxes: [{
+                        stacked: true,
+                        scaleLabel: {
+                            labelString: "Number of Views",
+                            display: true,
+                            fontSize: 20
+                        },
+                        ticks: {
+                            fontSize: 16
+                        }
+                }]
+                }
+            };
+
+            var myLineChart = new Chart(ctx, {
+                type: 'bar',
+                data: data,
+                options: options
+            });
+        </script>
+    </div>
+
+    <script>
+        $('.ui.dropdown').dropdown();
+    </script>
+</body>
+
+</html>
