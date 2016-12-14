@@ -27,8 +27,12 @@
             padding: 5em 0em;
         }
 
-        canvas {
+        canvas, .infoContent {
             padding: 70px 20px 0;
+        }
+
+        img {
+            margin-bottom: 30px;
         }
     </style>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -42,7 +46,8 @@
             <a href="index.html" class="header item">
                 <img class="logo" src="img/logo3.png" alt="logo"> Library Stats
             </a>
-            <a href="gem.html" class="item">Gem of the Week</a><a href="ga.html" class="item">Library Website - Google Analytics</a>
+            <a href="gem.html" class="item">Gem of the Week</a>
+            <a href="ga.html" class="item">Library Website - Google Analytics</a>
             <div class="ui simple dropdown item">
                 Course Guides <i class="dropdown icon"></i>
                 <div class="menu">
@@ -118,50 +123,33 @@
         </div>
     </div>
 
-    <canvas id="myChart" width="400" height="200"></canvas>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
-    <script>
-        var ctx = document.getElementById("myChart");
-        var data = {
-            labels: [
-                "Japan Constitution 1947"
-            ],
-            datasets: [
-                {
-                    data: [1],
-                    backgroundColor: [
-                        "#FF6384"
-                    ],
-                    hoverBackgroundColor: [
-                        "#FF6384"
-                    ]
-                }
-            ]
-        };
-        var options = {
-            title: {
-                display: true,
-                text: 'HIST 107 - Pages: views by percentage (107 Views Total)',
-                fontSize: 26
-            },
-            legend: {
-                labels: {
-                    fontSize: 18
-                }
-            },
-            tooltips: {
-                display: true,
-                bodyFontSize: 36
-            }
-        };
-
-        var myPieChart = new Chart(ctx, {
-            type: 'pie',
-            data: data,
-            options: options
-        });
-
-    </script>
+    <div class="ui container infoContent">
+        <h1>Library Website - Google Analytics</h1>
+        <h2>Sessions</h2>
+        <p>Sessions are users who visit the library website, even if for only one page and then leave for another website. The bounce rate reflects users who leave the website after landing on a page. This is expected since the library website's main purpose is to direct traffic to other resources.</p>
+        <img class="ui fluid bordered image" src="img/gaSessions.jpg">
+        <div class="ui divider"></div>
+        <h2>Mobile Technologies</h2>
+        <p>Measure the type of device that is being used to access the library's website. The options include Desktop, Mobile, or Tablet. The vast majority of users access the library website from the desktop. This helps us to understand how much we should focus our time and resources on developing websites that are built to work best on a particular platform.</p>
+        <img class="ui fluid bordered image" src="img/gaMobile.JPG">
+        <div class="ui divider"></div>
+        <h2>Traffic</h2>
+        <p>This measures how users come to the library's website. There are several categories.</p>
+        <p>Organic Traffic: From search engines where the user searches for the library website.</p>
+        <p>Direct Traffic: Direct visits come in a few different forms. Some people might have bookmarked a page on our website that they found interesting or useful and decided to return to our site later using that bookmark. This would be a considered a ‘direct’ visit. Someone who typed the  URL.</p>
+        <p>Referred Visitors: If someone on another website clicks on a link pointing to the library website.</p>
+        <p>Email: Referred to the website via an email.</p>
+        <p>Social: This traffic comes from social media sources like Facebook.</p>
+        <img class="ui fluid bordered image" src="img/gaTraffic.JPG">
+        <div class="ui divider"></div>
+        <h2>Flow</h2>
+        <p>This measures how users navigate through the library's website. Most users begin from the home page and either leave the library website or look for things like library information, staff information, information about borrowing (access services), and visitor services.</p>
+        <img class="ui fluid bordered image" src="img/gaFlow.JPG">
+        <div class="ui divider"></div>
+        <h2>Gem of the Week</h2>
+        <p>View the <a href="gem.html">Gem of the Week</a> webpage.</p>
+        <p>&nbsp;</p>
+    </div>
 
     <script>
         $('.ui.dropdown').dropdown();

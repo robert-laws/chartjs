@@ -42,7 +42,7 @@
             <a href="index.html" class="header item">
                 <img class="logo" src="img/logo3.png" alt="logo"> Library Stats
             </a>
-            <a href="gem.html" class="item">Gem of the Week</a>
+            <a href="gem.html" class="item">Gem of the Week</a><a href="ga.html" class="item">Library Website - Google Analytics</a>
             <div class="ui simple dropdown item">
                 Course Guides <i class="dropdown icon"></i>
                 <div class="menu">
@@ -94,7 +94,7 @@
                         <div class="menu">
                             <a class="item" href="inaf100Sections.html">Sections</a>
                             <a class="item" href="inaf100Content.html">Content</a>
-                            <a class="item" href="inad100Access.html">Access</a>
+                            <a class="item" href="inaf100Access.html">Access</a>
                         </div>
                     </div>
                     <div class="item">
@@ -133,7 +133,7 @@
                     pointBorderColor: "#fff",
                     pointHoverBackgroundColor: "#fff",
                     pointHoverBorderColor: "rgba(179,181,198,1)",
-                    data: [8, 46, 1, 8]
+                    data: [0, 1, 0, 0]
                 },
                 {
                     label: "# Clicked",
@@ -143,15 +143,20 @@
                     pointBorderColor: "#fff",
                     pointHoverBackgroundColor: "#fff",
                     pointHoverBorderColor: "rgba(255,99,132,1)",
-                    data: [53, 68, 8, 0]
+                    data: [0, 1, 0, 0]
                 }
             ]
         };
         var options = {
             title: {
                 display: true,
-                text: 'ARAB 403 - Content: types created & types clicked',
+                text: 'HIST 107 - Content: types created & types clicked',
                 fontSize: 26
+            },
+            legend: {
+                labels: {
+                    fontSize: 18
+                }
             },
             tooltips: {
                 display: true,

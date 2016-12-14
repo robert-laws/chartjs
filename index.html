@@ -27,7 +27,7 @@
             padding: 5em 0em;
         }
 
-        canvas {
+        canvas, .infoContent {
             padding: 70px 20px 0;
         }
     </style>
@@ -42,7 +42,7 @@
             <a href="index.html" class="header item">
                 <img class="logo" src="img/logo3.png" alt="logo"> Library Stats
             </a>
-            <a href="gem.html" class="item">Gem of the Week</a>
+            <a href="gem.html" class="item">Gem of the Week</a><a href="ga.html" class="item">Library Website - Google Analytics</a>
             <div class="ui simple dropdown item">
                 Course Guides <i class="dropdown icon"></i>
                 <div class="menu">
@@ -82,11 +82,11 @@
                         </div>
                     </div>
                     <div class="item">
-                        <i class="dropdown icon"></i> HIST 181
+                        <i class="dropdown icon"></i> HIST 107
                         <div class="menu">
-                            <a class="item" href="hist181Sections.html">Sections</a>
-                            <a class="item" href="hist181Content.html">Content</a>
-                            <a class="item" href="hist181Access.html">Access</a>
+                            <a class="item" href="hist107Sections.html">Sections</a>
+                            <a class="item" href="hist107Content.html">Content</a>
+                            <a class="item" href="hist107Access.html">Access</a>
                         </div>
                     </div>
                     <div class="item">
@@ -94,7 +94,7 @@
                         <div class="menu">
                             <a class="item" href="inaf100Sections.html">Sections</a>
                             <a class="item" href="inaf100Content.html">Content</a>
-                            <a class="item" href="inad100Access.html">Access</a>
+                            <a class="item" href="inaf100Access.html">Access</a>
                         </div>
                     </div>
                     <div class="item">
@@ -118,10 +118,100 @@
         </div>
     </div>
 
-    <div>
-
+    <div class="ui container infoContent">
+        <h1>Fall 2016 - Statistics - Highlights</h1>
+        <h2>Library Website - Google Analytics - Brief Overview</h2>
+        <p>The statistics showed that the library website is being used and is particularly useful for users to access content that we direct to multiple resources from the library website home page. The analytics also showed that users access the library website from desktop computers more than 90% of the time, that users often find the library website from Search Engines, and that the home page is by far the most popular page of the website - and is used to get to informational content about the library as the 2nd most common use.</p>
+        <div class="ui divider"></div>
+        <h2>Gem of the Week</h2>
+        <p>The library gem of the week has been a fairly popular offering from the library. Overall, there were 385 clicks from the Gem of the Week email to content on offer. This amounts to an average of 42 clicks per gem. The most popular Gem of the Week content were resources that had academic and non-academic offerings.</p>
+        <div class="ui divider"></div>
+        <h2>Course Guides</h2>
+        <p>The statistics show that course guides were best used if they were introduced to students early in the semester and focused on content related directly to an assignment(s). Information in the guide not directly relating to this purpose was viewed at a much lower rate. Content clicks varied depending on the needs of the students and based on the assignment. Usage of the guides (as shown by clicks on resources) rose sharply around assignment due dates.</p>
+        <div class="ui divider"></div>
+        <h2>Freshman Guide</h2>
+        <p>The Freshman Guide was accessed, at a total of 315 views during the course of the Fall Semester. The guide was accessed throughout the semester, not weighed heavily at one particular time period. The guide's most popular page by far was the 'home page,' which was viewed by a 4 to 1 rate compared to any other page in the guide.</p>
+        <img class="ui fluid bordered image" src="img/freshmanGuide.JPG">
+        <div class="ui divider"></div>
     </div>
 
+   <canvas id="myChart" width="400" height="200"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+    <script>
+        var ctx = document.getElementById("myChart");
+        var data = {
+            labels: ["Home", "How to find Articles", "How to Find and Borrow Books", "Course Reserves", "Study Spaces, Computing & Printing", "Your Personal Librarian"],
+            datasets: [{
+                label: 'Total Views per Page',
+                backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(25, 206, 186, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(25, 206, 186, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1,
+                data: [161, 42, 38, 26, 26, 22]
+            }]
+        };
+        var options = {
+            showLines: true,
+            title: {
+                display: true,
+                text: 'Freshman Guide - Page Views: Aug 21 - Dec 12',
+                fontSize: 26
+            },
+            legend: {
+                labels: {
+                    fontSize: 18
+                }
+            },
+            tooltips: {
+                display: true,
+                titleFontSize: 36,
+                bodyFontSize: 30
+            },
+            scales: {
+                xAxes: [{
+                    scaleLabel: {
+                        labelString: "Page Name",
+                        display: true,
+                        fontSize: 20
+                    },
+                    ticks: {
+                        fontSize: 16
+                    }
+                }],
+                yAxes: [{
+                    stacked: true,
+                    scaleLabel: {
+                        labelString: "Number of Sessions",
+                        display: true,
+                        fontSize: 20
+                    },
+                    ticks: {
+                        fontSize: 16
+                    }
+                }]
+            }
+        };
+
+        var myLineChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: options
+        });
+    </script>
+    <p>&nbsp;</p>
     <script>
         $('.ui.dropdown').dropdown();
     </script>

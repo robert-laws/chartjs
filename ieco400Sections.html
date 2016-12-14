@@ -42,7 +42,7 @@
             <a href="index.html" class="header item">
                 <img class="logo" src="img/logo3.png" alt="logo"> Library Stats
             </a>
-            <a href="gem.html" class="item">Gem of the Week</a>
+            <a href="gem.html" class="item">Gem of the Week</a><a href="ga.html" class="item">Library Website - Google Analytics</a>
             <div class="ui simple dropdown item">
                 Course Guides <i class="dropdown icon"></i>
                 <div class="menu">
@@ -94,7 +94,7 @@
                         <div class="menu">
                             <a class="item" href="inaf100Sections.html">Sections</a>
                             <a class="item" href="inaf100Content.html">Content</a>
-                            <a class="item" href="inad100Access.html">Access</a>
+                            <a class="item" href="inaf100Access.html">Access</a>
                         </div>
                     </div>
                     <div class="item">
@@ -123,17 +123,24 @@
         var ctx = document.getElementById("myChart");
         var data = {
             labels: [
+                "Find Articles",
+                "Datasets - United States",
+                "Reviewing the Literature",
+                "Datasets - Rest of the World",
+                "Citing the Literature",
+                "Datasets - GCC",
+                "Data Visualization",
+                "Writing in Economics",
+                "Economics Journals",
+                "Software Help",
                 "Getting Started",
-                "Books",
-                "Electronic Resources",
-                "Reference",
-                "Arabic Romanization",
-                "Search Strategy Examples",
-                "Heritage and Archival Projects"
+                "Additional Research Guides",
+                "About IECO 400 and 401",
+                "RefWorks"
             ],
             datasets: [
                 {
-                    data: [278, 69, 58, 50, 47, 26, 5],
+                    data: [154, 41, 37, 35, 25, 17, 16, 12, 6, 1, 0, 0, 0, 0],
                     backgroundColor: [
                         "#FF6384",
                         "#36A2EB",
@@ -141,7 +148,14 @@
                         "#153DB3",
                         "#21B315",
                         "#B36215",
-                        "#A015B3"
+                        "#A095B3",
+                        "#FF6984",
+                        "#36A9EB",
+                        "#FFCE96",
+                        "#953DB3",
+                        "#29B395",
+                        "#B36995",
+                        "#A995B3"
                     ],
                     hoverBackgroundColor: [
                         "#FF6384",
@@ -150,7 +164,14 @@
                         "#153DB3",
                         "#21B315",
                         "#B36215",
-                        "#A015B3"
+                        "#A095B3",
+                        "#FF6984",
+                        "#36A9EB",
+                        "#FFCE96",
+                        "#953DB3",
+                        "#29B395",
+                        "#B36995",
+                        "#A995B3"
                     ]
                 }
             ]
@@ -158,8 +179,13 @@
         var options = {
             title: {
                 display: true,
-                text: 'ARAB 403 - Pages: views by percentage (533 Views Total)',
+                text: 'IECO 400 - Pages: views by percentage (344 Views Total)',
                 fontSize: 26
+            },
+            legend: {
+                labels: {
+                    fontSize: 18
+                }
             },
             tooltips: {
                 display: true,

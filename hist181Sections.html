@@ -42,7 +42,7 @@
             <a href="index.html" class="header item">
                 <img class="logo" src="img/logo3.png" alt="logo"> Library Stats
             </a>
-            <a href="gem.html" class="item">Gem of the Week</a>
+            <a href="gem.html" class="item">Gem of the Week</a><a href="ga.html" class="item">Library Website - Google Analytics</a>
             <div class="ui simple dropdown item">
                 Course Guides <i class="dropdown icon"></i>
                 <div class="menu">
@@ -94,7 +94,7 @@
                         <div class="menu">
                             <a class="item" href="inaf100Sections.html">Sections</a>
                             <a class="item" href="inaf100Content.html">Content</a>
-                            <a class="item" href="inad100Access.html">Access</a>
+                            <a class="item" href="inaf100Access.html">Access</a>
                         </div>
                     </div>
                     <div class="item">
@@ -124,34 +124,22 @@
         var ctx = document.getElementById("myChart");
         var data = {
             labels: [
-                "Getting Started",
-                "Books",
-                "Electronic Resources",
-                "Reference",
-                "Arabic Romanization",
-                "Search Strategy Examples",
-                "Heritage and Archival Projects"
+                "General Background Information",
+                "Annexation of the Philippine Islands",
+                "Women's vote in 1919"
             ],
             datasets: [
                 {
-                    data: [278, 69, 58, 50, 47, 26, 5],
+                    data: [117, 67, 56],
                     backgroundColor: [
                         "#FF6384",
                         "#36A2EB",
-                        "#FFCE56",
-                        "#153DB3",
-                        "#21B315",
-                        "#B36215",
-                        "#A015B3"
+                        "#FFCE56"
                     ],
                     hoverBackgroundColor: [
                         "#FF6384",
                         "#36A2EB",
-                        "#FFCE56",
-                        "#153DB3",
-                        "#21B315",
-                        "#B36215",
-                        "#A015B3"
+                        "#FFCE56"
                     ]
                 }
             ]
@@ -159,8 +147,13 @@
         var options = {
             title: {
                 display: true,
-                text: 'ARAB 403 - Pages: views by percentage (533 Views Total)',
+                text: 'HIST 181 - Pages: views by percentage (240 Views Total)',
                 fontSize: 26
+            },
+            legend: {
+                labels: {
+                    fontSize: 18
+                }
             },
             tooltips: {
                 display: true,

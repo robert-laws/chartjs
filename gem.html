@@ -42,7 +42,8 @@
             <a href="index.html" class="header item">
                 <img class="logo" src="img/logo3.png" alt="logo"> Library Stats
             </a>
-            <a href="gem.html" class="item">Gem of the Week</a><a href="ga.html" class="item">Library Website - Google Analytics</a>
+            <a href="gem.html" class="item">Gem of the Week</a>
+            <a href="ga.html" class="item">Library Website - Google Analytics</a>
             <div class="ui simple dropdown item">
                 Course Guides <i class="dropdown icon"></i>
                 <div class="menu">
@@ -123,25 +124,40 @@
     <script>
         var ctx = document.getElementById("myChart");
         var data = {
-            labels: [
-                "Japan Constitution 1947"
-            ],
-            datasets: [
-                {
-                    data: [1],
-                    backgroundColor: [
-                        "#FF6384"
-                    ],
-                    hoverBackgroundColor: [
-                        "#FF6384"
-                    ]
-                }
-            ]
+            labels: ["Foreign Office Files for the Middle East (Aug 30)", "Press Reader (Sep 20)", "OECD iLibrary (Oct 5)", "Qatar National Library (Oct 18)", "World Religion Database (Oct 25)", "What's New in the Library (Nov 6)", "Online Documentaries (Nov 8)", "New Look Research Guides (Nov 13)", "China from Empire to Republic (Nov 22)"],
+            datasets: [{
+                label: 'Total Sessions per Gem of the Week',
+                backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(25, 206, 186, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(154, 22, 75, 0.2)'
+                ],
+                borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(25, 206, 186, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(154, 22, 75, 1)'
+                ],
+                borderWidth: 1,
+                data: [30, 76, 21, 24, 11, 35, 54, 56, 26]
+            }]
         };
         var options = {
+            showLines: true,
             title: {
                 display: true,
-                text: 'HIST 107 - Pages: views by percentage (107 Views Total)',
+                text: 'Gem of the Week - Fall 2016 (Aug 21 - Dec 12) - Total Sessions',
                 fontSize: 26
             },
             legend: {
@@ -151,18 +167,46 @@
             },
             tooltips: {
                 display: true,
-                bodyFontSize: 36
+                titleFontSize: 36,
+                bodyFontSize: 30
+            },
+            scales: {
+                xAxes: [{
+                    scaleLabel: {
+                        labelString: "Gem of the Week Name",
+                        display: true,
+                        fontSize: 20
+                    },
+                    ticks: {
+                        fontSize: 16
+                    }
+                }],
+                yAxes: [{
+                    stacked: true,
+                    scaleLabel: {
+                        labelString: "Number of Sessions",
+                        display: true,
+                        fontSize: 20
+                    },
+                    ticks: {
+                        fontSize: 16
+                    }
+                }]
             }
         };
 
-        var myPieChart = new Chart(ctx, {
-            type: 'pie',
+        var myLineChart = new Chart(ctx, {
+            type: 'bar',
             data: data,
             options: options
         });
-
     </script>
-
+    <div class="ui divider"></div>
+    <div class="ui container">
+    <h2>Gem of the Week - Analysis</h2>
+    <p>What's shown by the Gem of the Week Analytics is that GU-Q faculty, students, and staff found the Gems which offered something other than purely academic content. The most popular Gems were Press Reader, Online Documentaries, The New Look Research Guides (which is academic - but the gem focused on the guides as a whole), and What's New in the Library. While the purely academic Gems were viewed and do constitute important content to market, the Gems appear to be more effective if a mix of academic and popular-focused content is offered.</p>
+    </div>
+    <p>&nbsp;</p>
     <script>
         $('.ui.dropdown').dropdown();
     </script>

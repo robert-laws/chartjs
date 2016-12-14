@@ -42,7 +42,7 @@
             <a href="index.html" class="header item">
                 <img class="logo" src="img/logo3.png" alt="logo"> Library Stats
             </a>
-            <a href="gem.html" class="item">Gem of the Week</a>
+            <a href="gem.html" class="item">Gem of the Week</a><a href="ga.html" class="item">Library Website - Google Analytics</a>
             <div class="ui simple dropdown item">
                 Course Guides <i class="dropdown icon"></i>
                 <div class="menu">
@@ -94,7 +94,7 @@
                         <div class="menu">
                             <a class="item" href="inaf100Sections.html">Sections</a>
                             <a class="item" href="inaf100Content.html">Content</a>
-                            <a class="item" href="inad100Access.html">Access</a>
+                            <a class="item" href="inaf100Access.html">Access</a>
                         </div>
                     </div>
                     <div class="item">
@@ -124,25 +124,23 @@
         var ctx = document.getElementById("myChart");
         var data = {
             labels: [
-                "Getting Started",
+                "Home",
+                "Databases",
+                "Research Centers and Think Tanks",
+                "News Sources",
                 "Books",
-                "Electronic Resources",
-                "Reference",
-                "Arabic Romanization",
-                "Search Strategy Examples",
-                "Heritage and Archival Projects"
+                "Writing, Citing & Presenting"
             ],
             datasets: [
                 {
-                    data: [278, 69, 58, 50, 47, 26, 5],
+                    data: [15, 8, 4, 4, 2, 1],
                     backgroundColor: [
                         "#FF6384",
                         "#36A2EB",
                         "#FFCE56",
                         "#153DB3",
                         "#21B315",
-                        "#B36215",
-                        "#A015B3"
+                        "#B36215"
                     ],
                     hoverBackgroundColor: [
                         "#FF6384",
@@ -150,8 +148,7 @@
                         "#FFCE56",
                         "#153DB3",
                         "#21B315",
-                        "#B36215",
-                        "#A015B3"
+                        "#B36215"
                     ]
                 }
             ]
@@ -159,8 +156,13 @@
         var options = {
             title: {
                 display: true,
-                text: 'ARAB 403 - Pages: views by percentage (533 Views Total)',
+                text: 'IPOL 386 - Pages: views by percentage (34 Views Total)',
                 fontSize: 26
+            },
+            legend: {
+                labels: {
+                    fontSize: 18
+                }
             },
             tooltips: {
                 display: true,
